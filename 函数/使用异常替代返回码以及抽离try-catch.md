@@ -30,6 +30,7 @@ catch (Exception e) {
 
 ### best case
 ```java
+// delete 函数只与错误处理有关，很容易理解然后忽略掉
 public void delete(Page page) {
   try {
     deletePageAndAllReferences(page);
@@ -39,6 +40,7 @@ public void delete(Page page) {
   }
 }
 
+// deletepAndAllReferences 删除只与完全删除一个page有关，错误处理可以忽略掉
 private void deletepAndAllReferences(Page page) throws Exception {
   deletePage(page);
   registry.deleteReference(page.name);
